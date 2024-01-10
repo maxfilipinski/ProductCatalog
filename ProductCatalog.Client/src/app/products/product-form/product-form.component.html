@@ -1,0 +1,39 @@
+<form #productForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="mb-3">
+      <label for="name">Product name</label>
+      <input
+        id="name"
+        name="name"
+        class="form-control form-control-lg"
+        placeholder="Enter new product name"
+        #name="ngModel"
+        [(ngModel)]="form.name"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="price">Price</label>
+      <input
+        id="price"
+        name="price"
+        type="number"
+        step=".01"
+        class="form-control form-control-lg"
+        placeholder="Enter new product price"
+        #price="ngModel"
+        [(ngModel)]="form.price"
+        required
+      />
+    </div>
+  </div>
+  <div class="d-grid">
+    <button
+      class="btn btn-lg btn-success"
+      type="submit"
+      [disabled]="!productForm.form.valid"
+    >
+      Submit
+    </button>
+  </div>
+</form>

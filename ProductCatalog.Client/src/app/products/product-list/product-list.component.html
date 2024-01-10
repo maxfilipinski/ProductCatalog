@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li
+    class="list-group-item d-flex justify-content-between align-items-start mb-2 border px-4 py-3 rounded-3 mouse-hover"
+    *ngFor="let product of products"
+  >
+    <div class="fw-bold">{{ product.name }}</div>
+    <div class="fw-bold">${{ product.price }}</div>
+  </li>
+</ul>
